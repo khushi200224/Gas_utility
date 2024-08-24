@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Service Request Detail</h1>
+<p><strong>ID:</strong> {{ service_request.id }}</p>
+<p><strong>Title:</strong> {{ service_request.title }}</p>
+<p><strong>Description:</strong> {{ service_request.description }}</p>
+<p><strong>Status:</strong> {{ service_request.get_status_display }}</p>
+<p><strong>Date Created:</strong> {{ service_request.created_at }}</p>
+
+<a href="">Back to List</a> |
+<a href="">Edit</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ form.instance.pk|yesno:"Edit Service Request,Create Service Request" }}</h1>
+
+<form method="post" action="service_request_list.html">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<a href="service_request_list.html">Back to List</a>
+{% endblock %}

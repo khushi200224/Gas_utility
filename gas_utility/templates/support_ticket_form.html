@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{% if ticket %}Edit{% else %}Create{% endif %} Support Ticket</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{% if ticket %}Save Changes{% else %}Create Ticket{% endif %}</button>
+    </form>
+    <a href="support_ticket_list.html" class="btn btn-secondary">Back to List</a>
+{% endblock %}
